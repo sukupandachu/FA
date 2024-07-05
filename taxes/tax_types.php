@@ -31,7 +31,8 @@ function can_process()
 		set_focus('name');
 		return false;
 	}
-	elseif (!check_num('rate', 0))
+	//TEST: Let me allow negative tax rate to automate retentions.
+	elseif (!check_num('rate', -100))
 	{
 		display_error( _("The default tax rate must be numeric and not less than zero."));
 		set_focus('rate');
